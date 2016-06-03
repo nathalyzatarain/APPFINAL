@@ -1,0 +1,834 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Catalogo Peliculas</title>
+	<!-- <link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css" />
+	<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css" /> 
+	<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script> -->
+    
+    <link rel="stylesheet" href="themes/themes.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="jquery-mobile/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="jquery-mobile/jquery-1.11.1.min.js"></script>
+	<script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<!-- Inicio -->
+<div data-role="page" id="home" data-theme="b">
+	<div data-role="header">
+    	<a href="#add_form" data-role="button" data-icon="plus" data-iconpos="notext">Botón</a>
+		<h1>Peliculas</h1>
+		<a href="#about" data-role="button" data-icon="info" data-iconpos="notext">Botón</a>        
+	</div>
+	
+	<div data-role="content">
+		<p align="center"><img src="img/logoCine.png" width="300"/></p>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>Accion</h3>
+                <p>
+                	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar..." data-role="button" data-icon="arrow-r">
+                    	<li>
+                        	<a href="#info_product1"><h3>Punto de Quiebre</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                        <li>
+                        	<a href="#info_product2"><h3>Hitman: Agente 47</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                        <li>
+                        	<a href="#info_product3"><h3>Terremoto: La Falla de San Andrés</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                    </ul>
+				</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Ciencia Ficcion</h3>
+                <p>
+                	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar..." data-split-icon="arrow-r">
+                    	<li>
+                        	<a href="#info_product4"><h3>Los juegos del hambre: Sinsajo</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                        <li>
+                        	<a href="#info_product5"><h3>Maze Runner: Prueba de fuego</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                        <li>
+                        	<a href="#info_product6"><h3>Insurgente</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                    </ul>
+				</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Comedia</h3>
+                <p>
+                	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar..." data-split-icon="arrow-r">
+                    	<li>
+                        	<a href="#info_product7"><h3>Guerra de papás</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                        <li>
+                        	<a href="#info_product8"><h3>Zoolander 2</h3></a>
+                            <a href="#edit_product"><h3>Editar</h3></a>
+                        </li>
+                        <li>
+                        	<a href="#info_product9"><h3>Pasante de moda</h3></a>
+                            <a href="#edit_product"><h3>Editar</h3></a>
+                        </li>
+                    </ul>
+				</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Infantil</h3>
+                <p>
+                	<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar..." data-split-icon="arrow-r">
+                    	<li>
+                        	<a href="#info_product10"><h3>Hotel Transylvania 2</h3></a>
+                            <a href="#edit_product">Editar</a>
+						</li>
+                        <li>
+                        	<a href="#info_product11"><h3>El Principito</h3></a>
+                            <a href="#edit_product"><h3>Editar</h3></a>
+                        </li>
+                        <li>
+                        	<a href="#info_product12"><h3>Minions</h3></a>
+                            <a href="#edit_product"><h3>Editar</h3></a>
+                        </li>
+                    </ul>
+				</p>
+            </div>
+        </div>
+	</div>
+    
+    <div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#add_form" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!-- Agregar Productos -->
+<div data-role="page" id="add_form" data-theme="b">
+	<div data-role="header">
+		<h1>Registro de Productos</h1>
+	</div>
+
+	<div data-role="content">
+		<div data-role="fieldcontain">
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<input type="text" name="nombre" id="nombre" value=""  placeholder="Nombre del Producto"/>
+            <br />
+            <label for="file"><b>Imagen:</b></label>
+			<input type="file" name="file" id="file" value=""/>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<input type="text" name="descripcion" id="descripcion" value=""  placeholder="Descripción"/>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<input type="text" name="precio" id="precio" value=""  placeholder="Precio"/>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<input type="text" name="existencia" id="existencia" value=""  placeholder="Existencia"/>            
+		</div>
+		<div data-role="fieldcontain">
+            <label for="selectmenu" class="select">Genero:</label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Accion</option>
+				<option value="option2">Ciencia Ficcion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#home" data-role="button" data-inline="true">Guardar</a>
+            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
+		</div>
+	</div>
+	
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!-- Información del Producto 1-->
+<div data-role="page" id="info_product1" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/puntoquiebre.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Punto de Quiebre</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Un joven agente del FBI se infiltra en un equipo de atletas extraordinarios de deportes radicales que son sospechosos de planear una serie de robos corporativos sofisticados sin precedentes. Con su vida en peligro, intentará probar que ellos son los arquitectos de los crímenes que están devastando los mercados financieros del mundo.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$350</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>55</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Accion</option>
+				<option value="option2">Ciencia Ficcion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- Información del Producto 2-->
+<div data-role="page" id="info_product2" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/hitman.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Hitman: Agente 47</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Un asesino de élite genéticamente modificado para ser la máquina asesina perfecta, es ahora conocido por su código de barras: 47. Su último blanco es una mega corporación que busca crear un ejército. Hace equipo con una mujer que le podría ayudar a descubrir algunos secretos de su origen y así derrotar a sus enemigos.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$400</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>10</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Accion</option>
+				<option value="option2">Ciencia Ficcion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- Información del Producto 3-->
+<div data-role="page" id="info_product3" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/terremoto.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Terremoto: La Falla de San Andrés</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>California está experimentando el terremoto más fuerte de su historia. Ray Gaines, un piloto de helicóptero y rescatista de los bomberos de Los Angeles, intenta encontrar a su hija, Blake, que se encuentra en San Francisco en medio del caos; y a su ex esposa, Emma, quien necesita ayuda para escapar y encontrar a su hija.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$150</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>80</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Accion</option>
+				<option value="option2">Ciencia Ficcion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 4-->
+<div data-role="page" id="info_product4" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/sinsajo.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Los juegos del hambre: Sinsajo – Parte 1</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Katniss Everdeen está en el Distrito 13 después de que rompe los juegos para siempre. Bajo el liderazco de la Presidenta Coin y los consejos de sus confiables amigos, Katniss abre sus alas como la imagen de la rebelión mientras lucha por salvar a Peeta y a toda la nación, movida por su coraje.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$500</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>100</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Ciencia Ficcion</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 5-->
+<div data-role="page" id="info_product5" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/pruebafuego.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Maze Runner: Prueba de fuego</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Después de escapar del laberinto, Thomas y sus compañeros se enfrentan a su más grande reto: buscar pistas acerca de la misteriosa y poderosa organización conocida como CRUEL. Su viaje los lleva a un territorio desolado lleno de obstáculos inimaginables.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$300</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>85</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Ciencia Ficcion</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 6-->
+<div data-role="page" id="info_product6" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/insurgente.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>La serie Divergente: Insurgente</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Beatrice Prior debe confrontar sus demonios internos y continuar su lucha contra la poderosa alianza que amenaza con destrozar su sociedad, con la ayuda de otros que están de su lado. Ella y Cuatro son ahora fugitivos y deben averiguar qué es lo que su familia defendió con tanto sacrificio.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$180</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>15</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Ciencia Ficcion</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 7-->
+<div data-role="page" id="info_product7" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/guerrapapas.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Guerra de papás</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Brad es un ejecutivo de una radio y se esfuerza para ser el mejor padrastro de los dos hijos de su novia, Sarah, y quiere lograr que lo llamen “papá”. Pero Dusty, el padre biológico de los niños, reaparece y comienza a disputar con él la atención y el amor de sus hijos.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$250</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>30</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Comedia</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Ciencia Ficcion</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 8-->
+<div data-role="page" id="info_product8" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/zoolander.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Zoolander 2</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Diez años después de conocerse, Derek y Hansel son nuevamente atraídos al mundo del modelaje en busca del éxito que perdieron, y nada menos que en Roma. Aquí se encuentran a sí mismos convertidos en el blanco de una siniestra conspiración.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$80</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>13</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Comedia</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Ciencia Ficcion</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 9-->
+<div data-role="page" id="info_product9" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/pasante.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Pasante de moda</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>El viudo de 70 años Ben Whittaker acaba de descubrir que el retiro no es tan bueno como parece. Tomando una oportunidad de volver al juego, se convierte en un interno senior en un sitio online de moda, fundado y manejado por Jules Ostin.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$150</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>20</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Comedia</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Ciencia Ficcion</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 10-->
+<div data-role="page" id="info_product10" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/transilvania.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Hotel Transylvania 2</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>El Hotel de Drácula finalmente abre sus puertas para huéspedes humanos. Pero Drácula está preocupado de que su nieto mitad humano, mitad vampiro, no está mostrando señales de ser un vampiro. Así que él y sus amigos intentan hacer surgir su lado monstruoso para que Mavis no se vaya del hotel.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$250</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>50</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Infantil</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Ciencia Ficcion</option>
+				<option value="option4">Comedia</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 11-->
+<div data-role="page" id="info_product11" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/principito.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>El Principito</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Una niña vive en un mundo muy adulto junto con su madre, que intenta que su hija esté preparada para este. Su vecino, El Aviador, le presenta a la niña un mundo extraordinario donde cualquier cosa es posible, el mundo de El Principito. Un mundo que él mismo conoce hace ya mucho tiempo.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$250</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>50</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Infantil</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Ciencia Ficcion</option>
+				<option value="option4">Comedia</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Información del Producto 12-->
+<div data-role="page" id="info_product12" data-theme="b">
+	<div data-role="header">
+		<h1>Información del Producto</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="fieldcontain">
+        	<p align="center"><img src="img/minions.jpg" width="256"/></p>
+			<label for="textinput"><b>Nombre de la Pelicula:</b></label>
+			<p>Minions</p>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<p>Desde el inicio de los tiempos, los Minions viven para servir al más despreciable de los maestros. Desde el T. Rex hasta Napoleón, la distraída tribu ha ayudado a los más grandes y malvados de los villanos. Ahora Kevin, Stuart y Bob parten en un viaje para salvar a sus compañeros, donde tendrán la oportunidad de trabajar con la más grande villana del mundo.</p>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<p>$250</p>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<p>50</p>          
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Infantil</option>
+				<option value="option2">Accion</option>
+				<option value="option3">Ciencia Ficcion</option>
+				<option value="option4">Comedia</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">
+        	<a href="#" data-role="button" data-inline="true">Comprar por PayPal</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Edición del Producto -->
+<div data-role="page" id="edit_product" data-theme="b">
+	<div data-role="header">
+		<h1>Edición del Producto</h1>
+	</div>
+
+	<div data-role="content">
+		<div data-role="fieldcontain">
+			<label for="textinput"><b>Nombre del Producto:</b></label>
+			<input type="text" name="nombre" id="nombre" value=""  placeholder="Nombre del Producto"/>
+            <br />
+			<label for="textinput"><b>Descripción:</b></label>
+			<input type="text" name="descripcion" id="descripcion" value=""  placeholder="Descripción"/>
+            <br />
+			<label for="textinput"><b>Precio:</b></label>
+			<input type="text" name="precio" id="precio" value=""  placeholder="Precio"/>
+            <br />
+            <label for="textinput"><b>Existencia:</b></label>
+			<input type="text" name="existencia" id="existencia" value=""  placeholder="Existencia"/>            
+		</div>
+        <div data-role="fieldcontain">
+            <label for="selectmenu" class="select"><b>Genero:</b></label>
+			<select name="selectmenu" id="selectmenu">
+				<option value="option1">Accion</option>
+				<option value="option2">Ciencia Ficcion</option>
+				<option value="option3">Comedia</option>
+				<option value="option4">Infantil</option>
+			</select>
+		</div>
+        <div data-inline="true" data-type="horizontal" align="center">        	
+        	<a href="#" data-role="button" data-inline="true">Guardar</a>
+            <a href="#" data-role="button" data-inline="true">Eliminar</a>
+            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#about" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!-- Acerca de mí -->
+<div data-role="page" id="about" data-theme="b">
+	<div data-role="header">
+		<h1>Acerca de mí</h1>
+	</div>
+
+	<div data-role="content">
+		<p align="center"><img src="img/nathaly.jpg" width="20%"/></p>
+		<div data-role="fieldcontain">
+			<label for="textinput"><b>Nombre:</b></label>
+			<p>Jarett Nathaly Zatarain Montalvo</p>
+            <br />
+			<label for="textinput"><b>Carrera:</b></label>
+			<p>Ingeniería en Sistemas de Información</p>
+            <br />
+			<label for="textinput"><b>Materia:</b></label>
+			<p>Desarrollo Aplicaciones e-commerce</p>
+            <br />
+            <label for="textinput"><b>Preferencias:</b></label>
+            <ul>
+            	<li>Ver Peliculas</li>
+            </ul>
+		</div>
+	</div>
+	
+	<div data-role="footer" data-position="fixed" data-id="footerPpal">
+		<div data-role="navbar" data-type="horizontal">
+			<ul>
+				<li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+				<li><a href="#home" data-role="button" data-icon="home">Inicio</a></li>
+				<li><a href="#info" data-role="button" data-icon="info" data-rel="dialog">Info</a></li>
+				<li><a href="#home" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!-- Info -->
+<div data-role="page" id="info" data-theme="b">
+	<div data-role="header">
+		<h1>Mas Información</h1>
+	</div>
+
+	<div data-role="content">
+		<p align="center">Aplicación desarrollada mediante PhoneGap para Proyecto Final.</p>
+		<p align="center">Nathaly Zatarain - Mayo de 2016</p>
+		<a href="#" data-rel="back" data-role="button">Cerrar</a>
+	</div>
+</div>
+
+</body>
+</html>

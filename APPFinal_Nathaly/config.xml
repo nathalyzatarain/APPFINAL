@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.phonegap.jnzm"
+    version   = "1.0.0">
+
+<name>Catalogo Zatarain</name>
+
+<description>
+Aplicación desarrollada mediante PhoneGap para Proyecto Final.
+</description>
+
+<author href="https://example.com" email="you@example.com">
+Nathaly Zatarain
+</author>
+
+<icon src="img/icono.png" gap:density="ldpi" gap:platform="android" />
+<icon src="img/icono.png" gap:density="mdpi" gap:platform="android" />
+<icon src="img/icono.png" gap:density="hdpi" gap:platform="android" />
+<icon src="img/icono.png" gap:density="xhdpi" gap:platform="android" />
+
+
+</widget>
